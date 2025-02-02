@@ -13,11 +13,11 @@ public interface CompanyDao {
     List<Company> getAll();
 
     //get by id
-    Company findByid (Long id);
+    Company findById (Long id);
 
     //delete
     void deleteById(Long id);
 
     //update
-    void update(Company company,Long id);
+    Company update(Company company,Long id);
 }
