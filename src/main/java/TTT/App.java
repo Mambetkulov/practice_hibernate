@@ -17,7 +17,7 @@ public class App {
         while (true) {
             System.out.println("""
                     1. save company
-                    
+                    2. find by id
                     3. update company
                     4  find all companies
                     """);
@@ -32,6 +32,11 @@ public class App {
                     String address = str.nextLine();
 
                     System.out.println(companyService.addCompany(new Company(name, address)));
+                }
+                case 2 ->{
+                    System.out.print("id company: ");
+                    Long id = in.nextLong();
+                    System.out.println(companyService.findById(id));
                 }
                 case 3 -> {
                     System.out.println("update company with id: ");

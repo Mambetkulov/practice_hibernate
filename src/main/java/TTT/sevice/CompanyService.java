@@ -10,4 +10,6 @@ public interface CompanyService {
     String addCompany(Company company);
     Company updateCompany(Company company,Long id);
     List<Company> findAllCompanies();
+    Company findById(Long id);
+
 }

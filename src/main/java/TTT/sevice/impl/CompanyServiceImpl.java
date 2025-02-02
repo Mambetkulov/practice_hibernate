@@ -28,4 +28,10 @@ public class CompanyServiceImpl implements CompanyService {
     public List<Company> findAllCompanies() {
         return companyDao.getAll();
     }
+
+    @Override
+    public Company findById(Long id) {
+        return  companyDao.findById(id);
+
+    }
 }
