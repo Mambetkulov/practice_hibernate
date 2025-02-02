@@ -16,7 +16,7 @@ public class DataBaseConfig {
         try{
            prop.put(Environment.JAKARTA_JDBC_URL, "jdbc:postgresql://localhost:5432/postgres");
            prop.put(Environment.JAKARTA_JDBC_USER, "postgres");
-           prop.put(Environment.JAKARTA_JDBC_PASSWORD, "muha2004");
+           prop.put(Environment.JAKARTA_JDBC_PASSWORD, "Aibek005");
            prop.put(Environment.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
            prop.put(Environment.HBM2DDL_AUTO,"update");
            prop.put(Environment.SHOW_SQL,"true");

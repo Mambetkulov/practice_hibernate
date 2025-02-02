@@ -17,6 +17,7 @@ public class App {
         while (true) {
             System.out.println("""
                     1. save company
+                    2. find by id company
                     
                     """);
             System.out.print("choice:");
@@ -30,7 +31,11 @@ public class App {
                     String adrress = str.nextLine();
 
                     System.out.println(companyService.addCompany(new Company(name, adrress)));
-
+                }
+                case 2 -> {
+                    System.out.print("company id: ");
+                    Long id = in.nextLong();
+                    System.out.println(companyService.findById(id));
                 }
             }
 

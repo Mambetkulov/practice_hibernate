@@ -4,6 +4,7 @@ import TTT.config.DataBaseConfig;
 import TTT.dao.CompanyDao;
 import TTT.models.Company;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 
 import javax.swing.text.html.parser.Entity;
 import java.util.ArrayList;
@@ -29,8 +30,27 @@ public class CompanyDaoImpl implements CompanyDao {
 
     @Override
     public Company findByid(Long id) {
-        return null;
+        Company company = null;
+
+        try {
+            entityManager.getTransaction().begin();
+
+            company = (Company) entityManager.createQuery("select c from Company c where c.id = :id")
+                    .setParameter("id", id)
+                    .getSingleResult();
+
+            entityManager.getTransaction().commit();
+        } catch (NoResultException e) {
+            entityManager.getTransaction().rollback();
+            System.out.println("Компания табылган жок!");
+        } catch (Exception e) {
+            entityManager.getTransaction().rollback();
+            e.printStackTrace();
+        }
+
+        return company;
     }
+
 
     @Override
     public void deleteById(Long id) {

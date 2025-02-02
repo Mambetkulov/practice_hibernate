@@ -16,4 +16,10 @@ public class CompanyServiceImpl implements CompanyService {
         }
         return "success saved";
     }
+
+    @Override
+    public Company findById(Long id) {
+        return  companyDao.findByid(id);
+
+    }
 }
