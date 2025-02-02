@@ -34,4 +34,10 @@ public class CompanyServiceImpl implements CompanyService {
         return  companyDao.findById(id);
 
     }
+
+    @Override
+    public void deleteById(Long id) {
+        companyDao.deleteById(id);
+    }
+
 }

@@ -20,6 +20,7 @@ public class App {
                     2. find by id
                     3. update company
                     4  find all companies
+                    5  delete company
                     """);
             System.out.print("choice:");
             Scanner in = new Scanner(System.in);
@@ -50,6 +51,11 @@ public class App {
                 }
                 case 4 -> {
                     System.out.println(companyService.findAllCompanies());
+                }
+                case 5 -> {
+                    System.out.println("delete company with id: ");
+                    Long id = in.nextLong();
+                    companyService.deleteById(id);
                 }
             }
 

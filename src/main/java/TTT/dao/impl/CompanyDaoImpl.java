@@ -25,7 +25,7 @@ public class CompanyDaoImpl implements CompanyDao {
         List<Company> companies = new ArrayList<>();
         try{
             entityManager.getTransaction().begin();
-            companies = entityManager.createQuery("select c from Company c").getResultList();
+            companies = entityManager.createQuery("select c from Company c", Company.class).getResultList();
             entityManager.getTransaction().commit();
 
         }catch (Exception e){
@@ -58,7 +58,10 @@ public class CompanyDaoImpl implements CompanyDao {
 
     @Override
     public void deleteById(Long id) {
-
+entityManager.getTransaction().begin();
+Company company = entityManager.find(Company.class, id);
+entityManager.remove(company);
+entityManager.getTransaction().commit();
     }
 
     @Override
