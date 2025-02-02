@@ -19,6 +19,7 @@ public class App {
                     1. save company
                     2. find by id
                     3. update company
+                    4  find all companies
                     """);
             System.out.print("choice:");
             Scanner in = new Scanner(System.in);
@@ -35,17 +36,20 @@ public class App {
                 case 2 ->{
                     System.out.print("id company: ");
                     Long id = in.nextLong();
-                   companyService.findById(id) ;
+                    System.out.println(companyService.findById(id));
                 }
                 case 3 -> {
                     System.out.println("update company with id: ");
-                    Long id = str.nextLong();
+                    Long id = in.nextLong();
                     System.out.print("new company name: ");
                     String name = str.nextLine();
                     System.out.print("new company address: ");
                     String address = str.nextLine();
                     Company company = new Company(name, address);
                     System.out.println(companyService.updateCompany(company, id));
+                }
+                case 4 -> {
+                    System.out.println(companyService.findAllCompanies());
                 }
             }
 
