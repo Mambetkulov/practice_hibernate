@@ -20,4 +20,6 @@ public interface CompanyDao {
 
     //update
     Company update(Company company,Long id);
+
+
 }

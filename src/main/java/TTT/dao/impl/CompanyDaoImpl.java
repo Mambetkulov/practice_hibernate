@@ -6,7 +6,6 @@ import TTT.models.Company;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
 
-import javax.swing.text.html.parser.Entity;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +27,9 @@ public class CompanyDaoImpl implements CompanyDao {
         return List.of();
     }
 
+
     @Override
-    public Company findByid(Long id) {
+    public Company findById(Long id) {
         Company company = null;
 
         try {
@@ -58,7 +58,8 @@ public class CompanyDaoImpl implements CompanyDao {
     }
 
     @Override
-    public void update(Company company, Long id) {
+    public Company update(Company company, Long id) {
 
+        return company;
     }
 }

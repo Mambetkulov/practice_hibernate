@@ -24,7 +24,7 @@ public class CompanyServiceImpl implements CompanyService {
 
     @Override
     public Company findById(Long id) {
-        return  companyDao.findByid(id);
+        return  companyDao.findById(id);
 
     }
 }
