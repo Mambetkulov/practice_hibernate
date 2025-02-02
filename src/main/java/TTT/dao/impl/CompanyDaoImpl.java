@@ -23,8 +23,15 @@ public class CompanyDaoImpl implements CompanyDao {
     @Override
     public List<Company> getAll() {
         List<Company> companies = new ArrayList<>();
+        try{
+            entityManager.getTransaction().begin();
+            companies = entityManager.createQuery("select c from Company c").getResultList();
+            entityManager.getTransaction().commit();
 
-        return List.of();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return companies;
     }
 
     @Override
