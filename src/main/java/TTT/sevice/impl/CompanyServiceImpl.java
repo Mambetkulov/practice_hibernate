@@ -16,4 +16,9 @@ public class CompanyServiceImpl implements CompanyService {
         }
         return "success saved";
     }
+
+    @Override
+    public Company updateCompany(Company company,Long id) {
+        return companyDao.update(company,id);
+    }
 }

@@ -6,4 +6,5 @@ public interface CompanyService {
 
     //save
     String addCompany(Company company);
+    Company updateCompany(Company company,Long id);
 }

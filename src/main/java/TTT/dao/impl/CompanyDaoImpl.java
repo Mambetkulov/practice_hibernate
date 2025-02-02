@@ -28,9 +28,10 @@ public class CompanyDaoImpl implements CompanyDao {
     }
 
     @Override
-    public Company findByid(Long id) {
+    public Company findById(Long id) {
         return null;
     }
+
 
     @Override
     public void deleteById(Long id) {
@@ -38,7 +39,13 @@ public class CompanyDaoImpl implements CompanyDao {
     }
 
     @Override
-    public void update(Company company, Long id) {
-
+    public Company update(Company company, Long id) {
+        entityManager.getTransaction().begin();
+        Company company1 = entityManager.find(Company.class, id);
+        company1.setName(company.getName());
+        company1.setAddress(company.getAddress());
+        entityManager.merge(company1);
+        entityManager.getTransaction().commit();
+        return company1;
     }
 }
