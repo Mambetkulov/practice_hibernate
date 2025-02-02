@@ -36,7 +36,6 @@ public class CompanyDaoImpl implements CompanyDao {
 
     @Override
     public Company findById(Long id) {
-
         return null;
     }
 
