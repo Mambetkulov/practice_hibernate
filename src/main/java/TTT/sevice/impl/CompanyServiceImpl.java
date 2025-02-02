@@ -18,6 +18,11 @@ public class CompanyServiceImpl implements CompanyService {
     }
 
     @Override
+    public Company updateCompany(Company company,Long id) {
+        return companyDao.update(company,id);
+    }
+
+    @Override
     public Company findById(Long id) {
         return  companyDao.findByid(id);
 
