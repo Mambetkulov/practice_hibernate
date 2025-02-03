@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Programmer {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "prog_id")
