@@ -19,7 +19,7 @@ public class Programmer {
     @Column(name = "last_name")
     private String surname;
     private BigDecimal salary;
-    @Column(unique = true,length = 20)
+    @Column(unique = true,length = 20,name = "email")
     @Pattern(regexp = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$",
             message = "Некорректный email")
     private String email;
