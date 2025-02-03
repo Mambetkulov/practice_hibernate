@@ -2,12 +2,17 @@ package TTT.models;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Pattern;
+import lombok.*;
 
 
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "programmers")
+@Getter @Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class Programmer {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "prog_id")
